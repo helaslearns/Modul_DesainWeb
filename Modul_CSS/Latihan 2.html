@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        /* Container style to create the green border and padding */
+        .nav-container {
+            border: 2px solid green; /* Green outer border */
+            padding: 20px;            /* White space inside the border */
+            display: inline-block;   /* Keeps container tight to content */
+            margin: 20px;
+        }
+
+        /* Styles for the unordered list (the menu bar) */
+        ul {
+            list-style-type: none;  /* Removes bullet points */
+            margin: 0;
+            padding: 0;
+            display: flex;          /* This makes the items go horizontal */
+            background-color: #333; /* Dark background of the bar */
+            overflow: hidden;       /* Ensures background covers floats */
+        }
+
+        /* Styles for the list items */
+        li {
+            float: left;            /* Legacy support for horizontal layout */
+        }
+
+        /* Styles for the links themselves */
+        li a {
+            display: block;         /* Makes the entire area clickable */
+            color: white;           /* White text color */
+            text-align: center;
+            padding: 14px 16px;     /* Top/Bottom, Left/Right padding */
+            text-decoration: none;  /* Removes underline */
+        }
+
+        /* Change background on hover */
+        li a:hover {
+            background-color: #111; /* Darker grey on hover */
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- We wrap the list in a div to easily apply the green border -->
+    <div class="nav-container">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
