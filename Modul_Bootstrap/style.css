@@ -1,0 +1,72 @@
+body {
+  background: #ffffff;
+  color: #222;
+  padding: 12px;
+}
+
+/* Bingkai hitam tebal di sekeliling halaman, seperti wireframe */
+.bingkai {
+  border: 6px solid #000;
+  background: #ffffff;
+}
+
+/* Blok abu-abu untuk header, kolom, dan footer */
+.blok-abu {
+  background: #d9d9d9;
+}
+
+/* Kritik dan Saran membagi tinggi kolom kanan sama rata */
+.kolom-setengah {
+  flex: 1 1 0;
+}
+
+/* Judul bagian: pita putih di dalam blok abu-abu */
+.judul-bagian {
+  background: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.blok-abu p {
+  text-align: justify;
+}
+
+/* Pada layar kecil, kolom bertumpuk dengan tinggi minimal */
+@media (max-width: 767.98px) {
+  .kolom-setengah {
+    min-height: 180px;
+  }
+}
+
+/* Tombol melayang di pojok kanan bawah */
+.tombol-mengambang {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+  line-height: 1;
+  padding: 0;
+  z-index: 1030;
+}
+
+/* Entri hasil publish */
+.daftar-entri:not(:empty) {
+  margin-top: 1rem;
+}
+
+.entri-ulasan {
+  background: #ffffff;
+  border: 1px solid #bbb;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.entri-ulasan .teks-entri {
+  white-space: pre-line;
+  margin-bottom: 0.25rem;
+}

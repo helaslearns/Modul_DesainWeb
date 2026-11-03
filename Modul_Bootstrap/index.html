@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Latihan Modul 8 - Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Bingkai luar sesuai wireframe -->
+  <div class="bingkai d-flex flex-column min-vh-100 p-3">
+
+    <!-- Identitas: NAMA (kiri) dan NIM (kanan) -->
+    <header class="blok-abu d-flex justify-content-between align-items-center px-3 py-3 mb-3">
+      <span>Niceforus Helas</span>
+      <span>K3525037</span>
+    </header>
+
+    <!-- Konten utama: Testimoni (kiri, penuh) | Kritik + Saran (kanan, bertumpuk) -->
+    <main class="row g-3 flex-grow-1 mb-3">
+
+      <section class="col-md-6">
+        <div class="blok-abu h-100 p-3">
+          <h2 class="judul-bagian">Testimoni</h2>
+          <p>
+            Mata kuliah Desain Web memberi saya pemahaman dasar tentang cara
+            membangun tampilan halaman web yang rapi dan responsif. Praktikum
+            dengan Bootstrap sangat membantu karena kelas dan komponen siap
+            pakai mempercepat pembuatan layout tanpa menulis CSS dari nol.
+          </p>
+          <p>
+            Materi grid, navbar, dan form mudah diikuti karena langkah-langkahnya
+            runtut dan hasilnya langsung terlihat di browser. Dari sini saya
+            jadi lebih percaya diri membuat halaman yang tampil baik di layar
+            komputer maupun ponsel.
+          </p>
+          <p class="mb-0">
+            Secara keseluruhan, mata kuliah ini bermanfaat sebagai bekal untuk
+            pengembangan web yang lebih lanjut.
+          </p>
+          <!-- Entri hasil publish dirender di sini oleh script.js -->
+          <div id="daftar-testimoni" class="daftar-entri"></div>
+        </div>
+      </section>
+
+      <div class="col-md-6 d-flex flex-column gap-3">
+        <section class="blok-abu kolom-setengah p-3">
+          <h2 class="judul-bagian">Kritik</h2>
+          <p class="mb-0">
+            Waktu praktikum 1 x 50 menit terasa singkat untuk jumlah langkah
+            yang cukup banyak, sehingga sebagian mahasiswa sulit menyelesaikan
+            semuanya. Selain itu, sebagian kode pada modul masih memakai
+            penulisan Bootstrap versi 4, sehingga perlu penyesuaian saat
+            dijalankan dengan Bootstrap 5.
+          </p>
+          <div id="daftar-kritik" class="daftar-entri"></div>
+        </section>
+
+        <section class="blok-abu kolom-setengah p-3">
+          <h2 class="judul-bagian">Saran</h2>
+          <p class="mb-0">
+            Mohon durasi praktikum ditambah atau materi dibagi menjadi dua
+            pertemuan. Modul juga sebaiknya diperbarui agar sesuai dengan
+            versi Bootstrap yang dipakai, dan disertai contoh latihan
+            tambahan yang bervariasi.
+          </p>
+          <div id="daftar-saran" class="daftar-entri"></div>
+        </section>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="blok-abu text-center px-3 py-3">
+      &copy; 2026 Niceforus Helas - K3525037. Latihan Modul 8 Bootstrap.
+    </footer>
+
+  </div>
+
+  <!-- Tombol melayang (floating widget) -->
+  <button type="button" id="tombolMengambang"
+          class="btn btn-dark rounded-circle shadow tombol-mengambang"
+          aria-label="Tulis testimoni, kritik, dan saran" title="Tulis ulasan">+</button>
+
+  <!-- Modal berisi form -->
+  <div class="modal fade" id="modalUlasan" tabindex="-1" aria-labelledby="judulModalUlasan" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form id="formUlasan" novalidate>
+          <div class="modal-header">
+            <h5 class="modal-title" id="judulModalUlasan">Tulis Ulasan</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+          </div>
+          <div class="modal-body">
+            <div id="pesanPeringatan" class="alert alert-warning d-none" role="alert">
+              Isi minimal satu kolom sebelum publish.
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="isiTestimoni" placeholder="Testimoni" style="height: 100px"></textarea>
+              <label for="isiTestimoni">Testimoni</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" id="isiKritik" placeholder="Kritik" style="height: 100px"></textarea>
+              <label for="isiKritik">Kritik</label>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control" id="isiSaran" placeholder="Saran" style="height: 100px"></textarea>
+              <label for="isiSaran">Saran</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-dark">Publish</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
